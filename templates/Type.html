@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+                <title>Diabetic Prediction Results</title>
+
+            <style>
+                body
+                {
+                    background-image:url({{url_for('static',filename='diabetes.png')}});
+                    background-repeat: no-repeat;
+                    background-size: 1350px 810px;
+                }
+            </style>
+        </head>
+
+        <body bgcolor="cyan">
+
+            <h1>Diabetic Prediction Results</h1>
+    <p>Based on the information you provided, it is predicted that you have {{ diabetic_type }} diabetes.</p>
+
+        </body>
+
+    </html>

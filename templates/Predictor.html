@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Button</title>
+  <style>
+    .containerr {
+      height: 200px;
+      width: 500px;
+      margin-top: 30px;
+    }
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Diabetes prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="static\styles\materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Diabetes Prediction</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Home</a></li>
+      </ul>
+
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <!-- <h5 style="text-align: center; color: brown; font-weight: 600;">{{pred}}</h5>-->
+      <h1 class="header center orange-text">Diabetes type Prediction</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict the type of diabetes ( type 1 or type 2 ) <br>
+          answer in "1" for yes or "0" for no
+          <br>
+        </h5>
+      </div>
+
+
+      <div class="login">
+
+        <form action="{{url_for('predict')}}" method="post">
+          <div class="input-field col s4">
+
+            <label for="first_name"><b>Enter Your Age</b></label>
+            <br>
+            <br>
+            <input type="text" name="1" placeholder="Enter Your Age" required="required">
+
+
+
+          </div>
+          <div class="input-field col s4">
+            <label for="last_name"><b>Do you take Insuline </b></label>
+            <br>
+            <br>
+            <input type="number" max="1"  min="0" name="2" placeholder="Do you take Insuline - answer in 1 for Yes or 0 for No" required="required" type="number"
+              class="validate">
+              <!-- <input type="" required="required" name="2" id="option1" value="1" class="validate"> Yes </input><br>
+              <input type="radio" required="required" name="2" id="option2" value="0" class="validate"> No </input><br> -->
+
+          </div>
+
+
+
+
+
+      </div>
+      <div class="input-field col s4">
+        <label for="last_name"><b>Do you have Polycystic Ovary Syndrome 'PCOS' in the past(for Females) ? </b></label>
+        <br>
+        <br>
+        <input type="number" max="1"  min="0" name="3" placeholder="Answer in 1 for Yes or 0 for No - Skip it If You're Male" type="text"
+          class="validate">
+
+      </div>
+
+      <div class="input-field col s4">
+        <label for="_name"><b>Do you have obesity </b></label>
+        <br>
+        <br>
+        <input type="number" max="1"  min="0" name="4" placeholder="Do you have obesity - answer in 1 for Yes or 0 for No" required="required" class="validate"
+          required="required">
+
+      </div>
+      <div class="input-field col s4">
+        <label for="first_name"><b>Do you smoke</b></label>
+        <br>
+        <br>
+        <input type="number" max="1"  min="0" name="5" placeholder="Do you smoke - answer in 1 for Yes or 0 for No" required="required" id="first_name" type="text"
+          class="validate">
+
+      </div>
+      <div class="input-field col s4">
+        <label for="last_name"><b>Do you have a breathing difficulty</b></label>
+        <br>
+        <br>
+        <input type="number" max="1"  min="0" name="6" placeholder="Do you have a breathing difficulty - answer in 1 for Yes or 0 for No" required="required"
+          class="validate">
+      </div>
+      <div class="input-field col s4">
+        <label><b>Do you have a Acanthosis Nigricans (AN) in the past ? </b></label>
+        <br>
+        <br>
+        <input type="number" max="1"  min="0" name="7" placeholder="Do you have a Acanthosis Nigricans (AN) in the past ? - answer in 1 for Yes or 0 for No"
+          required="required">
+
+      </div>
+      <div class="input-field col s4">
+        <label for="last_name"><b>Have you been in a coma </b></label>
+        <br>
+        <br>
+        <input type="number" max="1"  min="0" name="8" placeholder="Have you been in a coma - answer in 1 for Yes or 0 for No" required="required" class="validate">
+      </div>
+      <div class="input-field col s4">
+        <label for="_name"><b>Do you have Confusion and difficalty Focusing</b></label>
+        <br>
+        <br>
+        <input type="number" max="1"  min="0" name="9" placeholder="Do you have Confusion and difficalty Focusing - answer in 1 for Yes or 0 for No" required="required"
+          class="validate">
+      </div>
+      <div class="input-field col s4">
+        <label for="_name"><b> Do you have Mumps Virus in the past ? </b></label>
+        <br>
+        <br>
+        <input type="number" max="1"  min="0" name="10" placeholder="Do you have Mumps Virus in the past ? - answer in 1 for Yes or 0 for No
+
+                  " required="required" class="validate">
+      </div>
+      <!-- <div class="input-field col s4">
+                <label for="_name"><b>Do you have Mumps Virus in the past ? </b></label>
+                <br>
+                    <br>
+                <input id="_name" name="10" placeholder="" type="text" class="validate">
+            </div> -->
+    </div>
+
+    <div class="row center">
+
+      <br> <br>
+
+      <!--   <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+<br> <br> -->
+      <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+    </div>
+    </form>
+  </div>
+
+  <br>
+  <!-- <h1 class="header center orange-text">Diabetes type Prediction</h1> -->
+  <h5 class="header center orange-text">Based on the information you provided, it is predicted that you have {{ diabetic_type }} diabetes.</h5>
+
+  <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer orange">
+    <div class="footer-copyright">
+      <div class="container" style="padding-bottom: 1rem; position: fixed; font-size: 1.2rem; margin-left: 5rem;">
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+</body>
+
+</html>
